@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GATE OpenING</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="A Comprehensive Benchmark for Judging Open-ended Interleaved Image-Text Generation">
+    <meta name="keywords" content="OpenING, MLLM, MLLM Evaluation, MLLM-as-a-Judge, Vision Language Model, Large Multimodal Model, AI, AGI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GATE OpenING: A Comprehensive Benchmark for Judging Open-ended Interleaved Image-Text Generation</title>
+
+    <link rel="icon" href="./static/images/icon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <script src="https://kit.fontawesome.com/fff5b27ec1.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More Research
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://mmt-bench.github.io/#examples">
+                <b>MMT-Bench</b> <span style="font-size:18px; display: inline; margin-left: 5px;">🔥</span>
+              </a>
+              <a class="navbar-item" href="https://github.com/OpenGVLab/Multi-Modality-Arena">
+                Lvlm-ehub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title is-bold">
+                <img src="static/images/icon.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+                <span class="mmmu" style="vertical-align: middle">OpenING</span>
+              </h1>
+              <h2 class="subtitle is-3 publication-subtitle">
+                A Comprehensive Benchmark for Judging Open-ended Interleaved Image-Text Generation
+              </h2>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Pengfei Zhou*,</span>
+                <span class="author-block">Xiaopeng Peng*,</span>
+                <span class="author-block">Jiajun Song,</span>
+                <span class="author-block">Chuanhao Li,</span>
+                <span class="author-block">Zhaopan Xu,</span>
+                <span class="author-block">Yue Yang,</span>
+                <span class="author-block">Ziyao Guo,</span>
+                <br>
+                <span class="author-block">Hao Zhang,</span>
+                <span class="author-block">Yuqi Lin,</span>
+                <span class="author-block">Yefei He,</span>
+                <span class="author-block">Lirui Zhao,</span>
+                <span class="author-block">Shuo Liu,</span>
+                <span class="author-block">Tianhua Li,</span>
+                <span class="author-block">Yuxuan Xie,</span>
+                <br>
+                <span class="author-block">Xiaojun Chang,</span>
+                <span class="author-block">Yu Qiao,</span>
+                <span class="author-block">Wenqi Shao,</span>
+                <span class="author-block">Kaipeng Zhang†</span>
+              </div>
+
+              <br>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><b>GATE Team</b></span> <br>
+                <span class="author-block"><b>Shanghai Artificial Intelligence Laboratory</b></span>
+              </div>
+
+              <br>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">*Equal Contribution</span><br>
+                <span class="author-block">†Corresponding Author:</span>
+                <span class="author-block"><a href="mailto:zhangkaipeng@pjlab.org.cn">zhangkaipeng@pjlab.org.cn</a></span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2406.10261" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <!-- <span class="link-block">
+                    <a href="https://huggingface.co/datasets/MMMU/MMMU" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon" style="font-size:18px">🤗</span>
+                      <span>Dataset</span>
+                    </a>
+                  </span> -->
+                  <span class="link-block">
+                    <a href="https://github.com/LanceZPF/OpenING" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <!-- <span class="link-block">
+                    <a href="https://huggingface.co/datasets/MMMU/MMMU" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon" style="font-size:18px">🤗</span>
+                      <span>IntJudge</span>
+                    </a>
+                  </span> -->
+                  <span class="link-block">
+                    <a href="#leaderboard" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon has-text-white">
+                        <i class="fa-solid fa-trophy"></i>
+                      </span>
+                      <span>Leaderboard</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="#examples" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon has-text-white">
+                        <i class="fa-solid fa-book"></i>
+                      </span>
+                      <span>Examples</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop has-text-centered">
+        <img src="static/images/overview_opening.jpg" alt="geometric reasoning">
+        <p>
+          The OpenING benchmark provides a comprehensive framework for evaluating interleaved image-text generation. It consists of 23 real-world meta-topics (inner ring), each of which is further divided into 56 specific tasks (outer ring). Examples showcase interleaved generation in eight representative domains, indicating its diversity and high quality.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="margin-bottom: 2vh;">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">🔔News</h2>
+            <div class="content has-text-justified">
+              <!-- <p>
+                <b>🚀[2024-11-30]: We are releasing our judge model, IntJudge! Stay tuned!</b>
+              </p> -->
+              <!-- <p>
+                <b>🔥[2024-11-29]: We are releasing our data! Stay tuned!</b>
+              </p> -->
+              <p>
+                <b>🚀[2024-11-28]: We are releasing our code, containing the evaluation pipeline on Interleaved Arena and the GPT-based evaluators! Stay tuned!</b>
+              </p>
+              <p>
+                <b>🔥[2024-11-27]: We are releasing our paper! The data will be openly available soon! Stay tuned!</b>
+              </p>
+          </div>
+            <h2 class="title is-3">Introduction</h2>
+            <div class="content has-text-justified">
+              <p>
+                We introduce GATE OpenING (OpenING), a comprehensive benchmark comprising <b>5,400</b> high-quality human-annotated instances across <b>56</b> real-world tasks. OpenING covers diverse daily scenarios such as travel guide, design, and brainstorming, offering a robust platform for challenging interleaved generation methods. In addition, we present IntJudge, a judge model for evaluating open-ended multimodal generation methods. Trained with a novel data pipeline, our IntJudge achieves an agreement rate of <b>82.42%</b> with human judgments, outperforming GPT-based evaluators by <b>11.34%</b>. Extensive experiments on OpenING reveal that current interleaved generation methods still have substantial room for improvement. Key findings on interleaved image-text generation are further presented to guide the development of next-generation generative models. We anticipate that more advanced multimodal judge models can be trained and tested on OpenING and we also believe that OpenING will push the boundaries of MLLMs towards general-purpose multimodal intelligence.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+    </div>
+    </section>
+
+    <!-- DATASET SECTION -->
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+        <h1 class="title is-1 mmmu">
+          <img src="static/images/icon.png" alt="Logo" class="mmmu-logo"/>
+          <span class="mmmu">OpenING Benchmark</span>
+        </h1>
+      </div>
+    </section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            <img src="static/images/pipeline_opening.jpg" alt="algebraic reasoning" class="center" style="width: 90%; height: auto;">
+            <br>
+            An illustration of our pipeline for data curation and the training of the proposed judge model, IntJudge. (a) We construct our OpenING benchmark in a top-down manner, which involves five stages: conceptualization, data collection, annotation, filtering, and processing. (b) We use the Dev Set of OpenING to train the proposed IntJudge. Specifically, we propose an Interleaved Arena to facilitate training data annotation and a novel Reference-Augmented Generation (RAG) approach to expand the training data size. We evaluate both seen and unseen interleaved image-text generation methods on the Test Set of OpenING to compare IntJudge with human judgments and GPT-4o judgments.
+          <br>
+        </div>
+      </div>
+    </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Comparisons with Existing Benchmarks</h2>
+            <div class="content has-text-justified">
+              <p>
+                OpenING includes 5,400 instances of multi-step interleaved image-text content across 23 meta-topics and 56 tasks, with diverse, carefully designed queries for various topics.  Compared with the existing benchmarks. OpenING includes more comprehensive data and broader tasks, providing multiple robost evaluation methods including an openly available judge model IntJudge. Steps: a step is indicated by an input instruction or an output image-text pair; SpI: Steps per Instance.
+              </p>
+              <div class="content has-text-centered">
+                <img src="static/images/statistics.png" alt="algebraic reasoning" class="center"> 
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <!-- RESULTS SECTION -->
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered" style="padding: 1.5rem 1.5rem;">
+        <h1 class="title is-1 mmmu">Experiment Results</h1>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 1.5rem;">
+      <div class="container">
+        <div class="columns is-centered m-4">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+            <div class="content has-text-justified">
+              <p>
+                We evaluate 12 representative methods, grouping them into three categories: 1) Integrated Pipeline, which in volves separate models for text and image generation in two stages; 2) Two-Stage Generator, which employs a unified model architecture to produce text and images in separate stages; and 3) End-to-End Generator, which directly generates image-text outputs in a single step. We reserve GPT-4o+DALL-E3, Emu3, VILA-U, Anole, SEED-LLaMA, and NExT-GPT as unseen models for IntJudge validation, while the remaining models are regarded as seen models in IntJudge training. We compare the interleaved content generated by 12 baseline methods with answers from human expert and rank these methods by win rates evaluated by human judgements.
+              </p>
+            </div>
+            <div class="model-labels-container">
+              <span class="leaderboard-label human_expert">Human Expert</span>
+              <span class="leaderboard-label proprietary">Integrated Pipeline</span>
+              <span class="leaderboard-label open_source1">Two-stage Generator</span>
+              <span class="leaderboard-label open_source2">End-to-End Generator</span>
+            </div>
+            <br>
+            <div class="content has-text-centered">
+              <p>
+                Comparison of model win rates evaluated by human, GPT-4o, and our IntJudge under FDT and different tie metrics. FDT: Force Dividing Tie metric. w/o Tie: Non-tie case. w/ Tie (0) and w/ Tie (.5): Count a tie as 0 and 0.5 wins for a model in a pairwise comparison, respectively. The best-performing model in each category is <b>in-bold</b>, and the second best is <u>underlined</u>.
+              </p>
+            </div>
+            <div class="leaderboard-container">
+              <div class="table-wrapper">
+                <table id="mmmu-table">
+                  <thead>
+                    <tr>
+                      <th rowspan="2" class="reset-cell clickable" style="text-align: center;">Method</th>
+                      <th colspan="4" class="sortable clickable" data-sort="number">Human Evaluation</th>
+                      <th colspan="4" class="sortable clickable" data-sort="number">GPT Evaluation</th>
+                      <th colspan="4" class="sortable clickable" data-sort="number">IntJudge Evaluation</th>
+                    </tr>
+                    <tr>
+                      <th class="sortable clickable" data-sort="number">FDT</th>
+                      <th class="sortable clickable" data-sort="number">w/o Tie</th>
+                      <th class="sortable clickable" data-sort="number">w/ Tie (0)</th>
+                      <th class="sortable clickable" data-sort="number">w/ Tie (.5)</th>
+                      <th class="sortable clickable" data-sort="number">FDT</th>
+                      <th class="sortable clickable" data-sort="number">w/o Tie</th>
+                      <th class="sortable clickable" data-sort="number">w/ Tie (0)</th>
+                      <th class="sortable clickable" data-sort="number">w/ Tie (.5)</th>
+                      <th class="sortable clickable" data-sort="number">FDT</th>
+                      <th class="sortable clickable" data-sort="number">w/o Tie</th>
+                      <th class="sortable clickable" data-sort="number">w/ Tie (0)</th>
+                      <th class="sortable clickable" data-sort="number">w/ Tie (.5)</th>
+                    </tr>
+                  </thead>
+                  <tbody id="leaderboard-body">
+                    <!-- Table body will be populated dynamically -->
+                  </tbody>
+                </table>
+                </div>
+            </div>
+          </div>
+        </div>
+      <!-------------------------------------------------------------------- heatmap SECTION -------------------------------------------------------------------->
+      <!-- <div class="columns is-centered m-6">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3">Pairwise Win Rates</h2>
+          <div class="content has-text-justified">
+            <p>
+              We visualize the pairwise comparison results of all methods on FDT metric evaluated by Human. The heat map reveals win-loss relationships, where warmer colors represent higher win rates and cooler colors vice versa. More heat maps on different tie metrics evaluated by Human, GPT-4o, and IntJudge can be found at the Appendix.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="static/images/heatmap.png" alt="heatmap" width="90%" style="margin-left: -70px;">
+            <p> Pairwise win rate matrices of interleaved genration methods on FDT metric, evaluated by Human.</p>
+          </div>
+        </div>
+      </div> -->
+        <!-------------------------------------------------------------------- breakdown SECTION -------------------------------------------------------------------->
+        <!-- <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+                <h2 class="title is-3">Win Rates Breakdown</h2>
+                <div class="content has-text-justified">
+                  <p>
+                    We present the win rates of all interleaved generation methods across 23 meta-topics, evaluated through human evaluations using FDT metric. SOTA models like GPT-4o+DALL-E3, Emu3, and VILA-U consistently ranked high in categories like "Storybook Creation," "Graph Generation," and "2D Image Reasoning," showcasing their superior capabilities in generating coherent interleaved content. Conversely, models like MiniGPT-5, NExT-GPT, and GILL struggled across most tasks, especially in areas such as "Healthcare Tasks," "Multimodal Time Series Forecasting," and "Educational Tasks," indicating a need for improved contextual understanding and generation capabilities. More can be found at the Appendix.
+                  </p>
+                </div>
+                <div class="content has-text-centered">
+                  <img src="static/images/breakdown.png" alt="breakdown" width="90%" style="margin-left: 20px;">
+                  <p> The win rates breakdown of interleaved generation methods across 23 meta-topics.</p>
+                </div>
+          </div>
+        </div> -->
+      <!-------------------------------------------------------------------- GPT Score SECTION -------------------------------------------------------------------->
+      <div class="columns is-centered m-6">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3">GPT-based Scoring</h2>
+          <div class="content has-text-justified">
+            <p>
+              Detailed scores from GPT-based evaluations are also provided to support explainable performance analysis of different models.
+              However, GPT-4o showcases the inherent biases to its own generation results. For example, GPT-4o gives 10 scores to its own answers in Human Preference Alignment. In contrast, outputs annotated by humans only achieve an average score of 9 in human preference alignment.</p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="static/images/gpt-score.png" alt="gpt-score" width="60%">
+            <p> Evaluation results of GPT-based scores.</p>
+          </div>
+        </div>
+      </div>
+      <!-------------------------------------------------------------------- Judge SECTION -------------------------------------------------------------------->
+      <div class="columns is-centered m-6">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3">Judge Agreement</h2>
+          <div class="content has-text-justified">
+            <p>
+              We present the agreement between different evaluators and human judgments. We implement random guess (Random) as a baseline. The results indicate that IntJudge generally achieved higher agreement with human judgments (82.42% in FDT) compared to GPT-based evaluation (71.08% in FDT), suggesting its potential for scalable evaluation of interleaved image-text generation.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="static/images/judge.png" alt="intjudge" width="80%">
+          </div>
+        </div>
+      </div>
+      <!-------------------------------------------------------------------- training SECTION -------------------------------------------------------------------->
+      <div class="columns is-centered m-6">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3">Extended Training</h2>
+          <div class="content has-text-justified">
+            <p>
+              The Dev Set of OpenING can provide 3,260 training instances as a special training set for fine-tuning the interleaved generation method. We finetuned MiniGPT-5 on the Dev Set to evaluate if fine-tuning improves interleaved generation performance. MiniGPT-5OpenING (finetuned on OpenING) is compared to other state-of-the-art models and MiniGPT-5 baselines (MiniGPT-5 is finetuned on VIST and MiniGPT-5MMD is finetuned on MMDialog). IntJudge-based evaluation on 2,160 randomly sampled pairwise outputs MiniGPT-5OpenING outperforms the baselines, with a 37.39% relative improvement on w/o Tie metric. These results demonstrate that training on OpenING's specialized dataset enhances the model's contextual understanding and ability to generate coherent interleaved image-text content.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="static/images/training.png" alt="training" width="65%">
+          </div>
+        </div>
+      </div>
+      <!-------------------------------------------------------------------- Error Analysis SECTION -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3">Error Analysis</h2>
+            <div class="content has-text-justified">
+              <p>
+                We conduct an error analysis on 200 instances where generative models underperformed compared to human experts. The frequency of error types across three models reveals their specific performance limitations. GPT-4o+DALL-E3 suffers from content incoherency and inconsistency since it is hard for DALL-E3 to generate multiple images in the same style. Poor image quality is the main problem of Anole, as its finetuning data for image generation is insufficient. While most outputs by SEED-X have multiple errors, the inexistence of text or image content is still the major problem.
+              </p>
+            </div>
+            <div class="content has-text-centered">
+              <img src="static/images/errors.png" alt="error distribution" width="65%">
+              <p> Error distribution of three models: GPT-4o+DALL-E3 (Integrated Pipeline), SEED-X (Two-Stage Generator), and Anole (End-to-End Generator).</p>
+            </div>
+          </div>
+        </div>
+      <!-------------------------------------------------------------------- Case Example  -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3" id="examples">Case Study</h2>
+            <div class="carousel results-carousel">
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_00.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_01.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_02.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_03.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_04.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_05.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_06.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_07.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_08.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_09.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_10.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_11.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_12.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_13.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_14.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_15.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_16.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_17.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_18.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_19.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_20.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_21.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/case/supplement-case study_22.jpg" alt="case" width="80%"/>
+                </div>
+              </div>
+            </div>
+            <br>
+            <p> Illustration of 23 pairs of generated outputs across 23 meta-topics. The gold medal represents the winner of pairwise comparison and the silver medal denotes a more favorable output in a tie scene of the pairwise comparison.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3 has-text-centered">BibTeX</h2>
+        <pre><code>
+          @misc{zhou2024GATE,
+            title={GATE OpenING: A Comprehensive Benchmark for Judging Open-ended Interleaved Image-Text Generation}, 
+            author={Pengfei Zhou, Xiaopeng Peng, Jiajun Song, Chuanhao Li, Zhaopan Xu, Yue Yang, Ziyao Guo, Hao Zhang, Yuqi Lin, Yefei He, Lirui Zhao, Shuo Liu, Tianhua Li, Yuxuan Xie, Xiaojun Chang, Yu Qiao, Wenqi Shao, and Kaipeng Zhang},
+            year={2024},
+            eprint={0000.000000},
+            archivePrefix={arXiv},
+            primaryClass={cs.CV}
+          }
+    </code></pre>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is website adapted from <a href="https://mmt-bench.github.io/#examples">MMT-Bench</a>, <a href="https://mmmu-benchmark.github.io/">MMMU</a>, <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://mathvista.github.io/">MathVista</a>, licensed under a <a rel="license"
+                                                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,342 @@
+{
+  "leaderboardData": [
+    {
+      "info": {
+        "name": "Human",
+        "type": "human_expert"
+      },
+      "validation": {
+        "Human Evaluation": {
+          "FDT": "83.94%",
+          "w/o Tie": "86.50%",
+          "w/ Tie (0)": "70.78%",
+          "w/ Tie (5)": "79.87%"
+        },
+        "GPT Evaluation": {
+          "FDT": "82.76%",
+          "w/o Tie": "83.09%",
+          "w/ Tie (0)": "82.27%",
+          "w/ Tie (5)": "82.76%"
+        },
+        "IntJudge Evaluation": {
+          "FDT": "85.65%",
+          "w/o Tie": "89.11%",
+          "w/ Tie (0)": "72.62%",
+          "w/ Tie (5)": "81.87%"
+        }
+      }
+    },
+    {
+      "info": {
+        "name": "GPT-4o+DALL-E3",
+        "type": "proprietary"
+      },
+      "validation": {
+        "Human Evaluation": {
+          "FDT": "78.20%",
+          "w/o Tie": "80.73%",
+          "w/ Tie (0)": "66.17%",
+          "w/ Tie (5)": "75.19%"
+        },
+        "GPT Evaluation": {
+          "FDT": "86.33%",
+          "w/o Tie": "86.60%",
+          "w/ Tie (0)": "86.23%",
+          "w/ Tie (5)": "86.44%"
+        },
+        "IntJudge Evaluation": {
+          "FDT": "83.24%",
+          "w/o Tie": "86.20%",
+          "w/ Tie (0)": "71.46%",
+          "w/ Tie (5)": "80.01%"
+        }
+      }
+    },
+    {
+      "info": {
+        "name": "Gemini1.5+Flux",
+        "type": "proprietary"
+      },
+      "validation": {
+        "Human Evaluation": {
+          "FDT": "66.67%",
+          "w/o Tie": "66.95%",
+          "w/ Tie (0)": "51.97%",
+          "w/ Tie (5)": "63.16%"
+        },
+        "GPT Evaluation": {
+          "FDT": "73.39%",
+          "w/o Tie": "73.38%",
+          "w/ Tie (0)": "72.75%",
+          "w/ Tie (5)": "73.18%"
+        },
+        "IntJudge Evaluation": {
+          "FDT": "66.11%",
+          "w/o Tie": "67.92%",
+          "w/ Tie (0)": "49.58%",
+          "w/ Tie (5)": "63.08%"
+        }
+      }
+    },
+    {
+      "info": {
+        "name": "VILA-U",
+        "type": "open_source1"
+      },
+      "validation": {
+        "Human Evaluation": {
+          "FDT": "62.10%",
+          "w/o Tie": "62.34%",
+          "w/ Tie (0)": "61.57%",
+          "w/ Tie (5)": "62.19%"
+        },
+        "GPT Evaluation": {
+          "FDT": "49.47%",
+          "w/o Tie": "49.55%",
+          "w/ Tie (0)": "49.29%",
+          "w/ Tie (5)": "49.56%"
+        },
+        "IntJudge Evaluation": {
+          "FDT": "68.66%",
+          "w/o Tie": "58.58%",
+          "w/ Tie (0)": "36.94%",
+          "w/ Tie (5)": "55.41%"
+        }
+      }
+    },
+    {
+      "info": {
+        "name": "Anole",
+        "type": "open_source2"
+      },
+      "validation": {
+        "Human Evaluation": {
+          "FDT": "52.72%",
+          "w/o Tie": "53.10%",
+          "w/ Tie (0)": "38.96%",
+          "w/ Tie (5)": "52.28%"
+        },
+        "GPT Evaluation": {
+          "FDT": "53.25%",
+          "w/o Tie": "53.06%",
+          "w/ Tie (0)": "52.60%",
+          "w/ Tie (5)": "53.04%"
+        },
+        "IntJudge Evaluation": {
+          "FDT": "56.33%",
+          "w/o Tie": "52.77%",
+          "w/ Tie (0)": "33.85%",
+          "w/ Tie (5)": "51.78%"
+        }
+      }
+    },
+    {
+      "info": {
+        "name": "Emu3",
+        "type": "open_source1"
+      },
+      "validation": {
+        "Human Evaluation": {
+          "FDT": "54.05%",
+          "w/o Tie": "55.24%",
+          "w/ Tie (0)": "52.25%",
+          "w/ Tie (5)": "54.95%"
+        },
+        "GPT Evaluation": {
+          "FDT": "47.19%",
+          "w/o Tie": "47.27%",
+          "w/ Tie (0)": "46.74%",
+          "w/ Tie (5)": "47.30%"
+        },
+        "IntJudge Evaluation": {
+          "FDT": "54.01%",
+          "w/o Tie": "54.48%",
+          "w/ Tie (0)": "39.04%",
+          "w/ Tie (5)": "53.21%"
+        }
+      }
+    },
+    {
+      "info": {
+        "name": "SEED-X",
+        "type": "open_source1"
+      },
+      "validation": {
+        "Human Evaluation": {
+          "FDT": "53.25%",
+          "w/o Tie": "52.03%",
+          "w/ Tie (0)": "38.55%",
+          "w/ Tie (5)": "51.51%"
+        },
+        "GPT Evaluation": {
+          "FDT": "56.46%",
+          "w/o Tie": "56.63%",
+          "w/ Tie (0)": "55.63%",
+          "w/ Tie (5)": "56.51%"
+        },
+        "IntJudge Evaluation": {
+          "FDT": "53.76%",
+          "w/o Tie": "54.32%",
+          "w/ Tie (0)": "36.15%",
+          "w/ Tie (5)": "52.88%"
+        }
+      }
+    },
+    {
+      "info": {
+        "name": "SEED-LLaMA",
+        "type": "open_source2"
+      },
+      "validation": {
+        "Human Evaluation": {
+          "FDT": "44.43%",
+          "w/o Tie": "42.47%",
+          "w/ Tie (0)": "30.76%",
+          "w/ Tie (5)": "44.54%"
+        },
+        "GPT Evaluation": {
+          "FDT": "42.33%",
+          "w/o Tie": "42.13%",
+          "w/ Tie (0)": "41.68%",
+          "w/ Tie (5)": "42.22%"
+        },
+        "IntJudge Evaluation": {
+          "FDT": "46.43%",
+          "w/o Tie": "45.49%",
+          "w/ Tie (0)": "28.21%",
+          "w/ Tie (5)": "47.20%"
+        }
+      }
+    },
+    {
+      "info": {
+        "name": "Emu2",
+        "type": "open_source2"
+      },
+      "validation": {
+        "Human Evaluation": {
+          "FDT": "40.31%",
+          "w/o Tie": "36.64%",
+          "w/ Tie (0)": "24.78%",
+          "w/ Tie (5)": "40.97%"
+        },
+        "GPT Evaluation": {
+          "FDT": "42.49%",
+          "w/o Tie": "42.43%",
+          "w/ Tie (0)": "41.52%",
+          "w/ Tie (5)": "42.60%"
+        },
+        "IntJudge Evaluation": {
+          "FDT": "36.60%",
+          "w/o Tie": "31.84%",
+          "w/ Tie (0)": "19.36%",
+          "w/ Tie (5)": "38.96%"
+        }
+      }
+    },
+    {
+      "info": {
+        "name": "NExT-GPT",
+        "type": "open_source1"
+      },
+      "validation": {
+        "Human Evaluation": {
+          "FDT": "33.59%",
+          "w/o Tie": "27.74%",
+          "w/ Tie (0)": "18.76%",
+          "w/ Tie (5)": "34.95%"
+        },
+        "GPT Evaluation": {
+          "FDT": "24.81%",
+          "w/o Tie": "24.62%",
+          "w/ Tie (0)": "24.27%",
+          "w/ Tie (5)": "24.97%"
+        },
+        "IntJudge Evaluation": {
+          "FDT": "34.08%",
+          "w/o Tie": "25.94%",
+          "w/ Tie (0)": "15.39%",
+          "w/ Tie (5)": "35.72%"
+        }
+      }
+    },
+    {
+      "info": {
+        "name": "Show-o",
+        "type": "open_source1"
+      },
+      "validation": {
+        "Human Evaluation": {
+          "FDT": "37.47%",
+          "w/o Tie": "35.97%",
+          "w/ Tie (0)": "24.57%",
+          "w/ Tie (5)": "40.42%"
+        },
+        "GPT Evaluation": {
+          "FDT": "33.21%",
+          "w/o Tie": "32.81%",
+          "w/ Tie (0)": "32.26%",
+          "w/ Tie (5)": "33.10%"
+        },
+        "IntJudge Evaluation": {
+          "FDT": "33.65%",
+          "w/o Tie": "24.22%",
+          "w/ Tie (0)": "13.59%",
+          "w/ Tie (5)": "35.53%"
+        }
+      }
+    },
+    {
+      "info": {
+        "name": "MiniGPT-5",
+        "type": "open_source2"
+      },
+      "validation": {
+        "Human Evaluation": {
+          "FDT": "31.47%",
+          "w/o Tie": "28.59%",
+          "w/ Tie (0)": "19.72%",
+          "w/ Tie (5)": "35.24%"
+        },
+        "GPT Evaluation": {
+          "FDT": "31.18%",
+          "w/o Tie": "30.98%",
+          "w/ Tie (0)": "30.66%",
+          "w/ Tie (5)": "31.18%"
+        },
+        "IntJudge Evaluation": {
+          "FDT": "24.65%",
+          "w/o Tie": "15.65%",
+          "w/ Tie (0)": "9.08%",
+          "w/ Tie (5)": "30.07%"
+        }
+      }
+    },
+    {
+      "info": {
+        "name": "GILL",
+        "type": "open_source2"
+      },
+      "validation": {
+        "Human Evaluation": {
+          "FDT": "25.96%",
+          "w/o Tie": "20.82%",
+          "w/ Tie (0)": "14.33%",
+          "w/ Tie (5)": "29.91%"
+        },
+        "GPT Evaluation": {
+          "FDT": "31.47%",
+          "w/o Tie": "31.25%",
+          "w/ Tie (0)": "30.70%",
+          "w/ Tie (5)": "31.58%"
+        },
+        "IntJudge Evaluation": {
+          "FDT": "23.23%",
+          "w/o Tie": "16.80%",
+          "w/ Tie (0)": "10.35%",
+          "w/ Tie (5)": "29.54%"
+        }
+      }
+    }
+  ]
+}
