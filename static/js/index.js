@@ -149,23 +149,36 @@ function sortTable(header, forceDescending = false, maintainOrder = false) {
 
   if (!maintainOrder) {
     rows.sort(function(a, b) {
-      var aCell = a.children[columnIndex];
-      var bCell = b.children[columnIndex];
-      var aValue = aCell.dataset.value || aCell.textContent.trim();
-      var bValue = bCell.dataset.value || bCell.textContent.trim();
+      var aCell = a.children[columnIndex+1];
+      var bCell = b.children[columnIndex+1];
+      
+      // Extract numeric values from data-value attribute, removing '%' if present
+      var aValue = (aCell.dataset.value || aCell.textContent.trim()).replace('%', '');
+      var bValue = (bCell.dataset.value || bCell.textContent.trim()).replace('%', '');
 
+      // Handle special case for '-'
       if (aValue === '-' && bValue !== '-') return isDescending ? 1 : -1;
       if (bValue === '-' && aValue !== '-') return isDescending ? -1 : 1;
+      if (aValue === '-' && bValue === '-') return 0;
 
-      if (sortType === 'number') {
-        aValue = parseFloat(aValue);
-        bValue = parseFloat(bValue);
-        if (isNaN(aValue)) aValue = 0;
-        if (isNaN(bValue)) bValue = 0;
-        return isDescending ? bValue - aValue : aValue - bValue;
-      } else {
-        return isDescending ? bValue.localeCompare(aValue) : aValue.localeCompare(bValue);
-      }
+      // Convert to numbers for comparison
+      aValue = parseFloat(aValue);
+      bValue = parseFloat(bValue);
+
+      // Handle NaN cases
+      if (isNaN(aValue)) aValue = -Infinity;
+      if (isNaN(bValue)) bValue = -Infinity;
+
+      // console.log(aValue);
+      // console.log("*"*8);
+      // console.log(bValue);
+      // console.log("*"*8);
+      // console.log(columnIndex);
+      // console.log("*"*8);
+      // console.log(bValue - aValue);
+
+      // Compare values
+      return isDescending ? bValue - aValue : aValue - bValue;
     });
   }
 
