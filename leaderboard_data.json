@@ -211,7 +211,7 @@
     {
       "info": {
         "name": "Emu2",
-        "type": "open_source2"
+        "type": "open_source1"
       },
       "validation": {
         "Human Evaluation": {
@@ -237,7 +237,7 @@
     {
       "info": {
         "name": "NExT-GPT",
-        "type": "open_source1"
+        "type": "open_source2"
       },
       "validation": {
         "Human Evaluation": {
